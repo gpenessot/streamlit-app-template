@@ -11,10 +11,8 @@ Un template moderne et structuré pour créer des applications d'analyse de donn
 - **Structure multi-pages** pour une organisation claire et une navigation intuitive
 - **Dashboard interactif** avec KPIs et visualisations dynamiques
 - **Tableaux de bord thématiques** (exploration, visualisations avancées, prédictions)
-- **Design responsif** optimisé avec des polices modernes (Poppins, Lato)
 - **Support pour Parquet** - format optimisé pour l'analyse de données
 - **Visualisations interactives** avec Plotly
-- **Générateur de données** pour démonstration et tests
 
 ## 📂 Structure du projet
 
