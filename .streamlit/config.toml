@@ -1,0 +1,16 @@
+[theme]
+primaryColor = "#4F8BF9"
+backgroundColor = "#FFFFFF"
+secondaryBackgroundColor = "#F0F2F6"
+textColor = "#262730"
+font = "sans serif"
+
+[server]
+# Comme CORS est désactivé, nous désactivons aussi la protection XSRF
+# pour éviter les conflits
+enableCORS = false
+enableXsrfProtection = false
+maxUploadSize = 200
+
+[browser]
+gatherUsageStats = false

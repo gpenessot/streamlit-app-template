@@ -1,0 +1,169 @@
+/* Import des polices Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Lato:wght@300;400;700&display=swap');
+
+/* Styles globaux */
+html, body, [class*="css"] {
+    font-family: 'Lato', sans-serif;
+    font-weight: 400;
+    color: #333333;
+}
+
+/* Entêtes */
+h1, h2, h3, h4, h5, h6, .stTitle {
+    font-family: 'Poppins', sans-serif !important;
+    font-weight: 600 !important;
+    color: #1E1E1E !important;
+    letter-spacing: -0.01em;
+}
+
+/* Titre principal spécifique */
+h1, .stTitle > h1 {
+    font-weight: 700 !important;
+    font-size: 2.2rem !important;
+    margin-bottom: 0.5rem;
+}
+
+h2 {
+    font-size: 1.8rem !important;
+    margin-top: 1.5rem !important;
+}
+
+h3 {
+    font-size: 1.5rem !important;
+}
+
+/* Texte normal */
+p, span, li, div:not(.stTitle):not(.stAlert) {
+    font-family: 'Lato', sans-serif !important;
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+/* Boutons et widgets */
+button, .stButton>button, .stSelectbox, .stMultiselect, .stSlider {
+    font-family: 'Lato', sans-serif !important;
+}
+
+/* Métriques */
+.css-1wivap2, [data-testid="stMetricValue"] {
+    font-family: 'Poppins', sans-serif !important;
+    font-weight: 600 !important;
+    font-size: 1.5rem !important;
+    background-color: rgba(79, 139, 249, 0.1);
+    border-radius: 10px;
+    padding: 10px !important;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+/* Label des métriques */
+[data-testid="stMetricLabel"] {
+    font-family: 'Lato', sans-serif !important;
+    font-weight: 700 !important;
+    font-size: 0.9rem !important;
+}
+
+/* Sidebar */
+.sidebar .sidebar-content {
+    font-family: 'Lato', sans-serif !important;
+}
+
+/* En-têtes de la sidebar */
+.sidebar .sidebar-content h1,
+.sidebar .sidebar-content h2,
+.sidebar .sidebar-content h3 {
+    font-family: 'Poppins', sans-serif !important;
+    font-weight: 600 !important;
+}
+
+/* Accordéons */
+.streamlit-expanderHeader {
+    font-family: 'Poppins', sans-serif !important;
+    font-weight: 600 !important;
+    color: #4F8BF9 !important;
+}
+
+/* Badges */
+.stAlert {
+    border-radius: 8px;
+    font-family: 'Lato', sans-serif !important;
+}
+
+/* Cartes d'information */
+div[data-testid="stDecoration"] {
+    background-image: linear-gradient(90deg, #4F8BF9, #1EAEDB);
+}
+
+/* Personnalisation des widgets de la sidebar */
+.css-1adrfps {
+    padding-top: 2rem;
+}
+
+/* Labels des widgets */
+label, .stRadio label, .stCheckbox label {
+    font-family: 'Lato', sans-serif !important;
+    font-weight: 700 !important;
+}
+
+/* Tableaux - styles améliorés et spécifiques */
+.stDataFrame {
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+/* Sélecteurs spécifiques pour les tableaux et DataFrames */
+.stDataFrame table,
+div[data-testid="stTable"] table,
+[data-testid="stDataFrame"] table,
+.dataframe {
+    font-family: 'Lato', sans-serif !important;
+}
+
+/* En-têtes de tableaux */
+.stDataFrame th,
+div[data-testid="stTable"] th,
+[data-testid="stDataFrame"] th,
+.dataframe th,
+thead tr th,
+table thead th,
+table tr th {
+    font-family: 'Poppins', sans-serif !important;
+    font-weight: 600 !important;
+    background-color: #f0f2f6 !important;
+    font-size: 0.9rem !important;
+}
+
+/* Cellules de données de tableaux */
+.stDataFrame td,
+div[data-testid="stTable"] td,
+[data-testid="stDataFrame"] td,
+.dataframe td,
+table tbody td,
+table tr td {
+    font-family: 'Lato', sans-serif !important;
+    font-size: 0.9rem !important;
+}
+
+/* Style spécifique pour le contenu des cellules */
+.stDataFrame td div,
+div[data-testid="stTable"] td div,
+[data-testid="stDataFrame"] td div,
+.dataframe td div {
+    font-family: 'Lato', sans-serif !important;
+}
+
+/* Bloc de code */
+code {
+    font-family: 'Courier New', monospace !important;
+}
+
+/* Sélecteurs pour les tableaux dans les sections de widgets (multiselect, etc.) */
+.stMultiSelect td, .stMultiSelect th,
+[data-baseweb="table"] td, [data-baseweb="table"] th {
+    font-family: 'Lato', sans-serif !important;
+}
+
+/* Style spécifique pour les valeurs dans les cellules */
+td [data-testid*="StyledDataFrameDataCell"],
+div[data-testid*="column-header"] {
+    font-family: 'Lato', sans-serif !important;
+}

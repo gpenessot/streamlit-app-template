@@ -1,0 +1,14 @@
+[project]
+name = "streamlit-app-template"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "numpy>=2.2.3",
+    "pandas>=2.2.3",
+    "plotly>=6.0.0",
+    "pre-commit>=4.1.0",
+    "pyarrow>=19.0.1",
+    "streamlit>=1.43.1",
+]
