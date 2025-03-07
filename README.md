@@ -32,11 +32,10 @@ Un template moderne et structuré pour créer des applications d'analyse de donn
 │   └── sales_data.parquet # Données de ventes (générées)
 ├── models/
 │   └── .gitkeep           # Dossier pour les modèles
-├── pages/                 # Pages supplémentaires
-│   ├── 1_📊_Exploratory_Analysis.py
-│   ├── 2_📈_Advanced_Visualizations.py
-│   └── 3_🔮_Predictions.py
-└── generate_sample_data.py # Script de génération de données
+└── pages/                 # Pages supplémentaires
+    ├── 1_📊_Exploratory_Analysis.py
+    ├── 2_📈_Advanced_Visualizations.py
+    └── 3_🔮_Predictions.py
 ```
 
 ## ⚙️ Installation
@@ -53,38 +52,17 @@ Un template moderne et structuré pour créer des applications d'analyse de donn
 git clone https://github.com/yourusername/streamlit-app-template.git
 cd streamlit-app-template
 
-# Créer et activer un environnement virtuel
-python -m venv .venv
+# Créer et activer un environnement virtuel avec uv
+uv venv
 source .venv/bin/activate  # Sur Windows: .venv\Scripts\activate
 
 # Installer les dépendances avec uv
 uv pip install -e .
 ```
 
-### Installation alternative avec pip
-
-```bash
-# Cloner le dépôt
-git clone https://github.com/yourusername/streamlit-app-template.git
-cd streamlit-app-template
-
-# Créer et activer un environnement virtuel
-python -m venv .venv
-source .venv/bin/activate  # Sur Windows: .venv\Scripts\activate
-
-# Installer les dépendances
-pip install -e .
-```
-
 ## 📊 Utilisation
 
 ### Génération des données exemple
-
-Avant de lancer l'application, générez les données d'exemple :
-
-```bash
-python generate_sample_data.py --format parquet
-```
 
 Options disponibles :
 - `--samples` : Nombre de transactions à générer (défaut: 10000)
