@@ -12,3 +12,7 @@ dependencies = [
     "pyarrow>=19.0.1",
     "streamlit>=1.43.1",
 ]
+
+[tool.setuptools.packages.find]
+include = ["streamlit_app_template*"]
+exclude = ["data*", "pages*", "assets*", "models*"]
