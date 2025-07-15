@@ -159,6 +159,14 @@ Pour adapter ce template à vos besoins :
 3. Personnalisez les couleurs et le thème dans `.streamlit/config.toml`
 4. Adaptez le style visuel dans `assets/css/style.css`
 
+## 🎓 Envie d'aller plus loin ?
+
+Ce template n'est que le début ! Découvrez ma **formation Streamlit Avancé** pour créer des applications vraiment professionnelles.
+
+**5 jours intensifs** : Design corporate • Interactivité avancée • Performance x10 • Déploiement multi-cloud
+
+[**→ Découvrir la formation (97€ au lieu de 147€)**](https://glups.uno/Stream2)
+
 ## 📄 Licence
 
 Ce projet est sous licence [MIT](LICENSE).
