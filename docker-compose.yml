@@ -1,0 +1,43 @@
+version: '3.8'
+
+services:
+  streamlit:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8501:8501"
+    volumes:
+      - ./data:/app/data
+      - ./models:/app/models
+    environment:
+      - STREAMLIT_SERVER_PORT=8501
+      - STREAMLIT_SERVER_ADDRESS=0.0.0.0
+      - STREAMLIT_SERVER_HEADLESS=true
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8501/_stcore/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 30s
+
+  # Service optionnel pour le développement avec hot reload
+  streamlit-dev:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8502:8501"
+    volumes:
+      - .:/app
+      - ./data:/app/data
+      - ./models:/app/models
+    environment:
+      - STREAMLIT_SERVER_PORT=8501
+      - STREAMLIT_SERVER_ADDRESS=0.0.0.0
+      - STREAMLIT_SERVER_HEADLESS=true
+      - STREAMLIT_SERVER_RUN_ON_SAVE=true
+    command: ["uv", "run", "streamlit", "run", "streamlit_app/Home.py", "--server.port=8501", "--server.address=0.0.0.0", "--server.runOnSave=true"]
+    profiles:
+      - dev

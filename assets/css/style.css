@@ -1,169 +1,171 @@
 /* Import des polices Google Fonts */
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Lato:wght@300;400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@400;500;600;700&family=Lato:wght@300;400;500;700&display=swap');
 
-/* Styles globaux */
-html, body, [class*="css"] {
-    font-family: 'Lato', sans-serif;
-    font-weight: 400;
-    color: #333333;
+/* Variables CSS pour les polices et couleurs */
+:root {
+    --font-title: 'Inter', 'Poppins', sans-serif;
+    --font-body: 'Lato', sans-serif;
+    --primary-gradient: linear-gradient(135deg, #9A6BFF 0%, #F254A4 100%);
+    --bg-gradient: linear-gradient(135deg, #0F1123 0%, #090B17 100%);
+    --card-bg: #1F212F;
+    --text-primary: #FFFFFF;
+    --text-secondary: rgba(255, 255, 255, 0.8);
 }
 
-/* Entêtes */
-h1, h2, h3, h4, h5, h6, .stTitle {
-    font-family: 'Poppins', sans-serif !important;
-    font-weight: 600 !important;
-    color: #1E1E1E !important;
-    letter-spacing: -0.01em;
+/* Container principal */
+.block-container {
+    padding-top: 2rem;
+    font-family: var(--font-body);
 }
 
-/* Titre principal spécifique */
-h1, .stTitle > h1 {
-    font-weight: 700 !important;
-    font-size: 2.2rem !important;
-    margin-bottom: 0.5rem;
+/* Titres - utiliser Inter 600 avec gradient */
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-title);
+    font-weight: 600;
+    color: var(--text-primary);
+    line-height: 1.2;
 }
 
+/* Titre principal avec gradient - exclure les emojis */
+h1 {
+    color: var(--text-primary);
+}
+
+/* Appliquer le gradient seulement au texte, pas aux emojis */
+h1 span {
+    background: var(--primary-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+/* Tailles de titres ajustées */
+h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+/* Sous-titres */
 h2 {
-    font-size: 1.8rem !important;
-    margin-top: 1.5rem !important;
+    font-size: 2rem;
+    margin-bottom: 0.8rem;
 }
 
 h3 {
-    font-size: 1.5rem !important;
+    font-size: 1.5rem;
+    margin-bottom: 0.6rem;
 }
 
-/* Texte normal */
-p, span, li, div:not(.stTitle):not(.stAlert) {
-    font-family: 'Lato', sans-serif !important;
-    font-size: 1rem;
+/* Texte de base - utiliser Lato */
+p, div, span, label, .stMarkdown, .stText {
+    font-family: var(--font-body);
+    font-weight: 400;
+    color: var(--text-secondary);
     line-height: 1.6;
 }
 
-/* Boutons et widgets */
-button, .stButton>button, .stSelectbox, .stMultiselect, .stSlider {
-    font-family: 'Lato', sans-serif !important;
+/* Sidebar - appliquer Lato */
+.css-1d391kg, .css-1lcbmhc {
+    font-family: var(--font-body);
 }
 
-/* Métriques */
-.css-1wivap2, [data-testid="stMetricValue"] {
-    font-family: 'Poppins', sans-serif !important;
-    font-weight: 600 !important;
-    font-size: 1.5rem !important;
-    background-color: rgba(79, 139, 249, 0.1);
-    border-radius: 10px;
-    padding: 10px !important;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+/* Sidebar titre - style de base */
+.css-1d391kg h1, .css-1lcbmhc h1 {
+    font-family: var(--font-title);
+    font-weight: 600;
+    color: var(--text-primary);
 }
 
-/* Label des métriques */
-[data-testid="stMetricLabel"] {
-    font-family: 'Lato', sans-serif !important;
-    font-weight: 700 !important;
-    font-size: 0.9rem !important;
+/* Buttons - style avec votre charte */
+.stButton button {
+    font-family: var(--font-body);
+    font-weight: 500;
+    background-color: var(--card-bg) !important;
+    color: var(--text-primary) !important;
+    border-radius: 24px !important;
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+    padding: 0.75rem 1.5rem !important;
+    transition: all 0.3s ease !important;
 }
 
-/* Sidebar */
-.sidebar .sidebar-content {
-    font-family: 'Lato', sans-serif !important;
+.stButton button:hover {
+    background-color: rgba(255, 255, 255, 0.08) !important;
+    border-color: rgba(255, 255, 255, 0.2) !important;
+    transform: translateY(-1px);
 }
 
-/* En-têtes de la sidebar */
-.sidebar .sidebar-content h1,
-.sidebar .sidebar-content h2,
-.sidebar .sidebar-content h3 {
-    font-family: 'Poppins', sans-serif !important;
-    font-weight: 600 !important;
+/* Selectbox et inputs - utiliser Lato */
+.stSelectbox, .stTextInput, .stNumberInput, .stTextArea {
+    font-family: var(--font-body);
 }
 
-/* Accordéons */
-.streamlit-expanderHeader {
-    font-family: 'Poppins', sans-serif !important;
-    font-weight: 600 !important;
-    color: #4F8BF9 !important;
+/* Dataframe et métriques - forcer Lato */
+.stDataFrame, .stMetric {
+    font-family: var(--font-body) !important;
 }
 
-/* Badges */
+/* Forcer Lato dans les tableaux */
+.stDataFrame table, .stDataFrame th, .stDataFrame td {
+    font-family: var(--font-body) !important;
+}
+
+/* Styles pour les cellules de tableau */
+.stDataFrame tbody tr td {
+    font-family: var(--font-body) !important;
+    font-weight: 400;
+}
+
+.stDataFrame thead tr th {
+    font-family: var(--font-body) !important;
+    font-weight: 500;
+}
+
+/* Alertes et messages */
+.stAlert, .stWarning, .stInfo, .stSuccess, .stError {
+    font-family: var(--font-body);
+}
+
+/* Améliorer l'apparence générale */
+.stApp {
+    font-family: var(--font-body);
+    background: var(--bg-gradient) !important;
+    color: var(--text-primary);
+}
+
+/* Cards et containers */
+.stExpander, .stContainer {
+    background-color: var(--card-bg) !important;
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+    border-radius: 16px !important;
+    padding: 1rem !important;
+}
+
+/* Sidebar style */
+.css-1d391kg, .css-1lcbmhc {
+    background-color: var(--card-bg) !important;
+    border-right: 1px solid rgba(255, 255, 255, 0.1) !important;
+}
+
+/* Inputs et selectboxes style */
+.stSelectbox > div > div, .stTextInput > div > div > input {
+    background-color: var(--card-bg) !important;
+    color: var(--text-primary) !important;
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+    border-radius: 12px !important;
+}
+
+/* Metriques avec style */
+.stMetric {
+    background-color: var(--card-bg) !important;
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+    border-radius: 12px !important;
+    padding: 1rem !important;
+}
+
+/* Alertes avec style */
 .stAlert {
-    border-radius: 8px;
-    font-family: 'Lato', sans-serif !important;
-}
-
-/* Cartes d'information */
-div[data-testid="stDecoration"] {
-    background-image: linear-gradient(90deg, #4F8BF9, #1EAEDB);
-}
-
-/* Personnalisation des widgets de la sidebar */
-.css-1adrfps {
-    padding-top: 2rem;
-}
-
-/* Labels des widgets */
-label, .stRadio label, .stCheckbox label {
-    font-family: 'Lato', sans-serif !important;
-    font-weight: 700 !important;
-}
-
-/* Tableaux - styles améliorés et spécifiques */
-.stDataFrame {
-    border-radius: 8px;
-    overflow: hidden;
-}
-
-/* Sélecteurs spécifiques pour les tableaux et DataFrames */
-.stDataFrame table,
-div[data-testid="stTable"] table,
-[data-testid="stDataFrame"] table,
-.dataframe {
-    font-family: 'Lato', sans-serif !important;
-}
-
-/* En-têtes de tableaux */
-.stDataFrame th,
-div[data-testid="stTable"] th,
-[data-testid="stDataFrame"] th,
-.dataframe th,
-thead tr th,
-table thead th,
-table tr th {
-    font-family: 'Poppins', sans-serif !important;
-    font-weight: 600 !important;
-    background-color: #f0f2f6 !important;
-    font-size: 0.9rem !important;
-}
-
-/* Cellules de données de tableaux */
-.stDataFrame td,
-div[data-testid="stTable"] td,
-[data-testid="stDataFrame"] td,
-.dataframe td,
-table tbody td,
-table tr td {
-    font-family: 'Lato', sans-serif !important;
-    font-size: 0.9rem !important;
-}
-
-/* Style spécifique pour le contenu des cellules */
-.stDataFrame td div,
-div[data-testid="stTable"] td div,
-[data-testid="stDataFrame"] td div,
-.dataframe td div {
-    font-family: 'Lato', sans-serif !important;
-}
-
-/* Bloc de code */
-code {
-    font-family: 'Courier New', monospace !important;
-}
-
-/* Sélecteurs pour les tableaux dans les sections de widgets (multiselect, etc.) */
-.stMultiSelect td, .stMultiSelect th,
-[data-baseweb="table"] td, [data-baseweb="table"] th {
-    font-family: 'Lato', sans-serif !important;
-}
-
-/* Style spécifique pour les valeurs dans les cellules */
-td [data-testid*="StyledDataFrameDataCell"],
-div[data-testid*="column-header"] {
-    font-family: 'Lato', sans-serif !important;
+    background-color: var(--card-bg) !important;
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+    border-radius: 12px !important;
+    color: var(--text-primary) !important;
 }

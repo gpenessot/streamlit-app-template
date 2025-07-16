@@ -1,18 +1,39 @@
 [project]
 name = "streamlit-app-template"
 version = "0.1.0"
-description = "Add your description here"
-readme = "README.md"
+description = "Un framework minimaliste mais complet pour développer rapidement des applications data avec Streamlit."
 requires-python = ">=3.11"
 dependencies = [
     "numpy>=2.2.3",
+    "openpyxl>=3.1.5",
     "pandas>=2.2.3",
-    "plotly>=6.0.0",
-    "pre-commit>=4.1.0",
+    "plotly>=5.17.0",
     "pyarrow>=19.0.1",
-    "streamlit>=1.43.1",
+    "streamlit>=1.43.0",
 ]
 
+[build-system]
+requires = ["setuptools>=45", "wheel"]
+build-backend = "setuptools.build_meta"
+
 [tool.setuptools.packages.find]
-include = ["streamlit_app_template*"]
-exclude = ["data*", "pages*", "assets*", "models*"]
+where = ["streamlit_app"]
+include = ["streamlit_app*"]
+
+[tool.uv]
+dev-dependencies = [
+    "pytest>=7.0.0",
+    "ruff>=0.1.0",
+]
+
+[tool.ruff]
+line-length = 88
+target-version = "py311"
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I"]
+ignore = ["E501"]
+
+[tool.ruff.format]
+quote-style = "double"
+indent-style = "space"
