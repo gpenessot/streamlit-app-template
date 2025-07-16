@@ -50,11 +50,10 @@ def prepare_dataframe_for_display(df):
     return display_df
 
 
-def setup_sidebar_header():
-    """Configure le header de la sidebar avec logo et titre pour toutes les pages"""
+def add_logo():
+    """Ajoute le logo et le titre au-dessus du menu de navigation dans la sidebar"""
     import base64
     
-    # Logo et titre dans le background du menu
     logo_path = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "assets", "images", "logo.png")
     
     if os.path.exists(logo_path):
@@ -69,7 +68,7 @@ def setup_sidebar_header():
                 [data-testid="stSidebarNav"] {{
                     background-image: url(data:image/png;base64,{encoded});
                     background-repeat: no-repeat;
-                    padding-top: 200px;
+                    padding-top: 240px;
                     background-position: center 20px;
                     background-size: 150px;
                 }}
@@ -82,12 +81,39 @@ def setup_sidebar_header():
                     color: var(--text-primary);
                     font-size: 1.5rem;
                     margin-top: 10px;
-                    margin-bottom: 2px;
+                    margin-bottom: 10px;
                     background: linear-gradient(135deg, #9A6BFF 0%, #F254A4 100%);
                     -webkit-background-clip: text;
                     -webkit-text-fill-color: transparent;
                     background-clip: text;
                 }}
+            </style>
+            """,
+            unsafe_allow_html=True,
+        )
+    else:
+        # Si pas de logo, afficher seulement le titre
+        st.markdown(
+            """
+            <style>
+                [data-testid="stSidebarNav"] {
+                    padding-top: 80px;
+                }
+                [data-testid="stSidebarNav"]::before {
+                    content: "Streamlit App Template";
+                    display: block;
+                    text-align: center;
+                    font-family: var(--font-title);
+                    font-weight: 600;
+                    color: var(--text-primary);
+                    font-size: 1.5rem;
+                    margin-top: 20px;
+                    margin-bottom: 10px;
+                    background: linear-gradient(135deg, #9A6BFF 0%, #F254A4 100%);
+                    -webkit-background-clip: text;
+                    -webkit-text-fill-color: transparent;
+                    background-clip: text;
+                }
             </style>
             """,
             unsafe_allow_html=True,

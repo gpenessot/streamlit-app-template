@@ -4,7 +4,7 @@ import sys
 import os
 sys.path.append(os.path.dirname(os.path.abspath(__file__)))
 
-from utils import describe_data, setup_sidebar_header
+from utils import describe_data, add_logo
 
 # Configuration de la page
 st.set_page_config(page_title="Explorer", page_icon="🔍")
@@ -20,7 +20,7 @@ def load_css():
         pass  # CSS optionnel
 
 load_css()
-setup_sidebar_header()
+add_logo()
 
 st.markdown("""
 <h1>🔍 <span>Explorer les Données</span></h1>

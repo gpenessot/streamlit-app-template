@@ -6,7 +6,7 @@ import sys
 import os
 sys.path.append(os.path.dirname(os.path.abspath(__file__)))
 
-from utils import setup_sidebar_header
+from utils import add_logo
 
 # Configuration de la page
 st.set_page_config(page_title="Visualiser", page_icon="📊")
@@ -22,7 +22,7 @@ def load_css():
         pass  # CSS optionnel
 
 load_css()
-setup_sidebar_header()
+add_logo()
 
 def clean_dataframe_for_plotly(df):
     """Nettoie un DataFrame pour qu'il soit compatible avec Plotly"""

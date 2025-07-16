@@ -12,7 +12,7 @@ st.set_page_config(
 # Imports après la configuration
 from data_loader import load_data
 from visualizations import plot_simple_chart
-from utils import prepare_dataframe_for_display, setup_sidebar_header
+from utils import prepare_dataframe_for_display, add_logo
 
 # Chargement des CSS
 def load_css():
@@ -25,7 +25,7 @@ def load_css():
         pass  # CSS optionnel
 
 load_css()
-setup_sidebar_header()
+add_logo()
 
 # Sidebar avec chargement de données pour Home uniquement
 with st.sidebar:
